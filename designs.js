@@ -3,8 +3,8 @@
 var grid = {
   height: "",
   width: "",
-  color: "",
-  // data: [[]], to store
+  color: "#000000",
+  data: [[]], // for future use
 }
 // -----------------------------------------------
 
@@ -20,6 +20,14 @@ function makeGrid() {
     }
     $('#pixelCanvas').append(row);
   }
+}
+// convert rgb to hex (snippet from https://jsfiddle.net/Mottie/xcqpF/1/light/)
+function rgb2hex(rgb){
+ rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+ return (rgb && rgb.length === 4) ? "#" +
+  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
 }
 
 // -----------------------------------------------
@@ -41,12 +49,26 @@ $('#colorPicker').change(function(event){
 // -----------------------------------------------
 
 
+// -------- CELL CLICK EVENT HANDLER -------------
+$(document).on('click', 'td', function(){
+  var color = rgb2hex($(this).css('background-color'));
+  console.log("Pixel Color: " + color);
+  console.log("Grid Color: " + grid.color);
+  if(color != grid.color){
+    $(this).css('background-color', grid.color);
+  }
+  else{
+    $(this).css('background-color', '#ffffff');
+  }
+});
+// -----------------------------------------------
+
 
 // -------- FORM SUBMIT EVENT HANDLER ------------
 // when user submits form...
 $('#sizePicker').submit(function(event){
   event.preventDefault(); // prevent default form action
-  $('#pixelCanvas').children().remove();
+  $('#pixelCanvas').children().remove(); // clear previous grid
   makeGrid(); // call the makeGrid function
 });
 // -----------------------------------------------
