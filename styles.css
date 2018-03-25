@@ -29,13 +29,13 @@ table {
 }
 
 tr {
-    height: 20px;
+    height: 10px;
 }
 
 td {
-    width: 20px;
+    width: 10px;
 }
 
 input[type=number] {
-    width: 6em;
+    width: 4em;
 }
