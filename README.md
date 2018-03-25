@@ -3,8 +3,8 @@
 ## Table of Contents
 
 * [Overview](#overview)
-* [Detailed Explanation of Code](#Detailed Explanation of Code)
-* [About the Developer](#About the Developer)
+* [Detailed Explanation of Code](#detailed-explanation-of-code)
+* [About the Developer](#about-the-developer)
 
 ## Overview
 
@@ -43,4 +43,6 @@ In the late 1990s, James began surfing the World Wide Web over a dial-up connect
 
 James built his first DIY desktop computer in the fall of 2001, pairing an AMD Athlon XP CPU with an MSI motherboard and 256MB of RAM. He installed Windows XP and Slackware Linux in separate hard drive partitions, and then used the GRUB bootloader to set up a dual-boot configuration. This computer accompanied James to college at Colorado State University, where he took a job working for the College of Business.
 
-Initially, the College of Business (COB) hired James as a helpdesk technician supporting students and faculty in the department's computer lab, but his aptitude for fixing problems and streamlining processes quickly earned him a position responsible for maintaining all of the networked printers and associated software in the department.   well as the server software e and eventually earned a promotion to head of the Security Team. 
+Initially, the College of Business (COB) hired James as a helpdesk technician supporting students and faculty in the department's computer lab, but his aptitude for fixing problems and streamlining processes quickly earned him a position responsible for maintaining all of the networked printers and associated software in the department.  
+
+ well as the server software e and eventually earned a promotion to head of the Security Team.
