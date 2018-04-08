@@ -1,21 +1,21 @@
 // ------------ VARIABLES & OBJECTS --------------
 // declare grid object
 var grid = {
-  height: "20",
-  width: "20",
-  color: "#000000",
-  data: {}
+  height: "20", // set default height to 20 cells
+  width: "20", // set default width to 20 cells
+  color: "#000000", // set default color to black
+  data: {} // create an empty data object for storing individual cell color values
 }
 // -----------------------------------------------
 
 
 // ----------------- FUNCTIONS -------------------
-// create table with height of grid.height and width of grid.width
-function makeGrid(restore){
+// create a table with height of grid.height and width of grid.width
+function makeGrid(restore){ // 'restore' argument: 0 = no, and all other values = yes
   $('#pixelCanvas').children().remove(); // clear previous grid
-  if(restore == 0){ // if 'restore' is off, get grid dims from input boxes.
-    grid.height = Math.round($('#inputHeight').val());
-    grid.width = Math.round($('#inputWidth').val());
+  if(restore == 0){ // if 'restore' is off, get grid dims from input boxes
+    grid.height = Math.round($('#inputHeight').val()); // round off any decimals
+    grid.width = Math.round($('#inputWidth').val()); // ditto
   }
   for(var i = 0; i < grid.height; i++){ // loop to create rows
     var row = $("<tr></tr>");
@@ -47,41 +47,38 @@ $('#colorPicker').change(function(event){
 
 
 // -------- CELL CLICK EVENT HANDLER -------------
-$(document).on('click', 'td', function(){
-  var cellColor = rgb2hex($(this).css('background-color'));
-  var cellID = $(this).attr('id');
-  if(cellColor != grid.color){
-    $(this).css('background-color', grid.color);
-    grid.data[cellID] = grid.color;
+$(document).on('click', 'td', function(){ // when user clicks on a cell
+  var cellColor = rgb2hex($(this).css('background-color')); // cellColor = current cell color
+  var cellID = $(this).attr('id'); // cellID = id attribute of current cell
+  if(cellColor != grid.color){ // if cellColor isn't the same as grid.color
+    $(this).css('background-color', grid.color); // "Make it so." -Picard
+    grid.data[cellID] = grid.color; // and set current cell's grid.data value to grid.color
   }
-  else{
-    $(this).css('background-color', '#ffffff');
-    grid.data[cellID] = "#ffffff";
+  else{ // otherwise
+    $(this).css('background-color', ""); // change the cell color to blank
+    grid.data[cellID] = ""; // and set the cell's grid.data value to blank as well
   }
 });
 // -----------------------------------------------
 
 
 // ----------- BUTTON EVENT HANDLERS -------------
-// when user submits form...
-$('#sizePicker').submit(function(event){
+$('#sizePicker').submit(function(event){ // when user submits form
   event.preventDefault(); // prevent default form action
   grid.data = {} // clear all fields from grid.data object
   // call the makeGrid function with 'restore' argument set to 0 for 'no'
   makeGrid(0);
 });
-$('#save').click(function(event){
-  event.preventDefault(); // prevent default form action
-  storeGrid();
+$('#save').click(function(event){ // when user clicks 'save' button
+  storeGrid(); // call storeGrid function
 });
 $('#restore').click(function(event){
-  event.preventDefault(); // prevent default form action
-  restoreGrid();
+  restoreGrid(); // call restoreGrid function
 });
-// -----------------------------------------------
+// ------------------------------------------------
 
 
-// -------- LOCALSTORAGE EVENT HANDLERS ----------
+// -------- LOCALSTORAGE EVENT HANDLERS -----------
 
 // when user clicks "Save" button...
 function storeGrid(){
@@ -93,7 +90,7 @@ function storeGrid(){
 
 // when user clicks "Restore" button...
 function restoreGrid(){
-  // pull grid values from local storage
+  // pull grid height & width values from local storage
   grid.height = localStorage.getItem("gridHeight");
   grid.width = localStorage.getItem("gridWidth");
   grid.data = JSON.parse(localStorage.getItem("gridData"));
@@ -101,10 +98,10 @@ function restoreGrid(){
   makeGrid(1);
 }
 
-// -----------------------------------------------
+// -------------------------------------------------
 
 
-// ---------- 3rd PARTY CODE SNIPPETS ------------
+// ------------ 3rd PARTY CODE SNIPPETS ------------
 /*
 The following code snippets were copied from various 3rd party sources.
 Full credit for their authorship shall be given when/wherever it is due.
@@ -121,5 +118,9 @@ function rgb2hex(rgb){
   ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
 }
 
+// Random NASA background image
+// Credit: izaprzy
+// Source: https://github.com/izaprzy/NASA-API-Images/blob/master/js/app.js
+// Code can be found in the "nasa.js" file. 
 
-// -----------------------------------------------
+// -------------------------------------------------
