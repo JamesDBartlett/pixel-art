@@ -47,16 +47,18 @@ $('#colorPicker').change(function(event){
 
 
 // -------- CELL CLICK EVENT HANDLER -------------
-$(document).on('click', 'td', function(){ // when user clicks on a cell
-  var cellColor = rgb2hex($(this).css('background-color')); // cellColor = current cell color
-  var cellID = $(this).attr('id'); // cellID = id attribute of current cell
-  if(cellColor != grid.color){ // if cellColor isn't the same as grid.color
-    $(this).css('background-color', grid.color); // "Make it so." -Picard
-    grid.data[cellID] = grid.color; // and set current cell's grid.data value to grid.color
-  }
-  else{ // otherwise
-    $(this).css('background-color', ""); // change the cell color to blank
-    grid.data[cellID] = ""; // and set the cell's grid.data value to blank as well
+$('#pixelCanvas').on('click mousedown mouseover', 'td', function(e){ // when user clicks on a cell
+  if(e.buttons === 1){
+    var cellColor = rgb2hex($(this).css('background-color')); // cellColor = current cell color
+    var cellID = $(this).attr('id'); // cellID = id attribute of current cell
+    if(cellColor != grid.color){ // if cellColor isn't the same as grid.color
+      $(this).css('background-color', grid.color); // "Make it so." -Picard
+      grid.data[cellID] = grid.color; // and set current cell's grid.data value to grid.color
+    }
+    else{ // otherwise
+      $(this).css('background-color', ""); // change the cell color to blank
+      grid.data[cellID] = ""; // and set the cell's grid.data value to blank as well
+    }
   }
 });
 // -----------------------------------------------
