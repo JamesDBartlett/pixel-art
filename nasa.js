@@ -18,7 +18,7 @@ $(function () {
         var day = random(1, 28);
 
         var date = year + '-' + month + '-' + day;
-        var url = 'https://api.nasa.gov/planetary/apod?api_key=' + key + '&date=' + date + '&hd=true'; // add random date to url
+        var url = 'https://api.nasa.gov/planetary/apod?api_key=' + key + '&date=' + date + '&hd=false'; // add random date to url
 
         $.ajax({
             url: url
