@@ -1,10 +1,8 @@
 $(function () {
     var key = 'KlN2nGZbuMg9uOy1AIbmIx7b3oAaClQSe3VJHQNA';
-    var $section1 = $('#background-image');
-    var imageInformation = $('.image-information');
-    var imageDate = $('.image-date');
+    var $section1 = $('body');
     var nextImage = $('#newbg');
-    var mainContent = $('main');
+    var mainContent = $('bgbutton');
 
     function insertNewBackground() {
         mainContent.addClass('hidden');
@@ -18,19 +16,16 @@ $(function () {
         var day = random(1, 28);
 
         var date = year + '-' + month + '-' + day;
-        var url = 'https://api.nasa.gov/planetary/apod?api_key=' + key + '&date=' + date + '&hd=false'; // add random date to url
+        var url = 'https://api.nasa.gov/planetary/apod?api_key=' + key + '&date=' + date + '&hd=true'; // add random date to url
 
         $.ajax({
             url: url
         }).done(function (response) {
             var background = response.hdurl;
-            nextImage.fadeIn(5000);
+            //nextImage.fadeIn(5000);
             $section1.fadeIn(5000).css('background-image', 'url(' + background + ')');
-            var title = response.title;
-            var date = response.date;
-            imageInformation.text(title);
             imageDate.text('Taken: ' + date);
-            mainContent.delay(3000).fadeIn(6000);
+            //mainContent.delay(3000).fadeIn(6000);
         }).fail(function (error) {
             console.log(error);
         });
