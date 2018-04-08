@@ -121,6 +121,6 @@ function rgb2hex(rgb){
 // Random NASA background image
 // Credit: izaprzy
 // Source: https://github.com/izaprzy/NASA-API-Images/blob/master/js/app.js
-// Code can be found in the "nasa.js" file. 
+// Code can be found in the "nasa.js" file.
 
 // -------------------------------------------------
