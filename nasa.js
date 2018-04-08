@@ -20,10 +20,8 @@ $(function () {
             url: url
         }).done(function (response) {
             var background = response.url;
-            //nextImage.fadeIn(5000);
+            nextImage.fadeIn(5000);
             $section1.fadeIn(5000).css('background-image', 'url(' + background + ')');
-            //imageDate.text('Taken: ' + date);
-            //mainContent.delay(3000).fadeIn(6000);
         }).fail(function (error) {
             console.log(error);
         });
