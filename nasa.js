@@ -3,7 +3,7 @@ $(function () {
     var $section1 = $('#background-image');
     var imageInformation = $('.image-information');
     var imageDate = $('.image-date');
-    var nextImage = $('.show-next-image');
+    var nextImage = $('#newbg');
     var mainContent = $('main');
 
     function insertNewBackground() {
