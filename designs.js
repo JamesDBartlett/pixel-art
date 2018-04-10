@@ -88,6 +88,7 @@ function storeGrid(){
   localStorage.setItem("gridHeight", grid.height);
   localStorage.setItem("gridWidth", grid.width);
   localStorage.setItem("gridData", JSON.stringify(grid.data));
+  alert('Saved! To retrieve your saved pixel art, click \"Restore.\" ');
 }
 
 // when user clicks "Restore" button...
