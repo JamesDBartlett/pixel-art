@@ -1,8 +1,8 @@
 // ------------ VARIABLES & OBJECTS --------------
 // declare grid object
 var grid = {
-  height: "50", // set default height to 20 cells
-  width: "50", // set default width to 20 cells
+  height: "100", // set default height to 20 cells
+  width: "100", // set default width to 20 cells
   color: "#000000", // set default color to black
   data: {} // create an empty data object for storing individual cell color values
 }
