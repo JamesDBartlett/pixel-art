@@ -11,32 +11,37 @@
     Lab: Pixel Art Maker
   </div>
   <div class="canvas">
-    <input type="button" value="New Background" id="newbg">
-    <table id="pixelCanvas"></table>
+    <input type="button" value="New Wallpaper" id="newbg">
+      <table id="pixelCanvas"></table>
     <div class="storage">
-      Save / Restore
       <input type="button" value="Save" id="save">
       <input type="button" value="Restore" id="restore">
     </div>
   </div>
   <div class="left dock">
-    <h2>Grid Size</h2>
     <form id="sizePicker">
-        <p>Grid Height:</p>
-        <input type="number" id="inputHeight" name="height" min="1" value="100">
-        <p>Grid Width:</p>
-        <input type="number" id="inputWidth" name="width" min="1" value="100">
-        <p><input type="submit"></p>
+        Height<br />
+        <input type="number" class="margin" id="inputHeight" name="height" min="1" value="80"><br />
+        Width<br />
+        <input type="number" class="margin" id="inputWidth" name="width" min="1" value="80"><br />
+        <input type="submit" value="Apply" class=><br />
     </form>
-    <h2>Pixel Color</h2>
-    <input type="color" value="#000000" id="colorPicker">
-  <!--   <h2>Draw Mode</h2>
-  <label class="toggle"><input type="checkbox" id="erase">
-    <div class="slider round"></div>
-  </label> -->
+    <br />
+    <div class = "margin">
+    Color<br />
+    <input id="colorPicker" value="#000000" style="width:50px" class="jscolor {width:101, padding:0, shadow:false,borderWidth:0, backgroundColor:'transparent', insetColor:'#000000',hash:true} margin">
+    </div>
+    <div class="margin">
+    Draw Mode<br />
+    <label class="toggle margin">
+      <input type="checkbox" id="erase">
+      <div class="slider round"></div>
+    </label>
+    </div>
   </div>
     <script src="jquery.min.js"></script>
     <script src="designs.js"></script>
     <script src="nasa.js"></script>
+    <script src="jscolor.min.js"></script>
 </body>
 </html>

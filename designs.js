@@ -1,8 +1,8 @@
 // ------------ VARIABLES & OBJECTS --------------
 // declare grid object
 var grid = {
-  height: "100", // set default height to 20 cells
-  width: "100", // set default width to 20 cells
+  height: "80", // set default height to 20 cells
+  width: "80", // set default width to 20 cells
   color: "#000000", // set default color to black
   data: {} // create an empty data object for storing individual cell color values
 }
@@ -53,11 +53,13 @@ $('#colorPicker').change(function(event){
 // -------- CELL CLICK EVENT HANDLER -------------
 $('#pixelCanvas').on('click mousedown mouseover', 'td', function(e){ // when user clicks on a cell
   if(e.buttons === 1){
-    var cellColor = rgb2hex($(this).css('background-color')); // cellColor = current cell color
-    var cellID = $(this).attr('id'); // cellID = id attribute of current cell
-    if(cellColor != grid.color){ // if cellColor isn't the same as grid.color
-      $(this).css('background-color', grid.color); // "Make it so." -Picard
-      grid.data[cellID] = grid.color; // and set current cell's grid.data value to grid.color
+    if(!erase){
+      var cellColor = $(this).css('background-color'); // cellColor = current cell color
+      var cellID = $(this).attr('id'); // cellID = id attribute of current cell
+      if(cellColor != grid.color){ // if cellColor isn't the same as grid.color
+        $(this).css('background-color', grid.color); // "Make it so." -Picard
+        grid.data[cellID] = grid.color; // and set current cell's grid.data value to grid.color
+      }
     }
     else{ // otherwise
       $(this).css('background-color', ""); // change the cell color to blank
@@ -80,6 +82,14 @@ $('#save').click(function(event){ // when user clicks 'save' button
 });
 $('#restore').click(function(event){
   restoreGrid(); // call restoreGrid function
+});
+$('#erase').change(function(event){ // when user changes "Draw Mode" toggle
+  if(erase){ // if erase variable is currently true...
+    erase = false; // set it to false
+  }
+  else { // otherwise...
+    erase = true; // set it to true
+  }
 });
 // ------------------------------------------------
 
