@@ -1,11 +1,13 @@
 // ------------ VARIABLES & OBJECTS --------------
 // declare grid object
 var grid = {
-  height: "20", // set default height to 20 cells
-  width: "20", // set default width to 20 cells
+  height: "50", // set default height to 20 cells
+  width: "50", // set default width to 20 cells
   color: "#000000", // set default color to black
   data: {} // create an empty data object for storing individual cell color values
 }
+// declare eraser boolean
+var erase = false;
 // -----------------------------------------------
 
 
@@ -34,6 +36,8 @@ function makeGrid(restore){ // 'restore' argument: 0 = no, and all other values 
     $('#pixelCanvas').append(row);
   }
 }
+
+$(makeGrid);
 
 // -----------------------------------------------
 
@@ -106,8 +110,8 @@ function restoreGrid(){
 
 // ------------ 3rd PARTY CODE SNIPPETS ------------
 /*
-The following code snippets were copied from various 3rd party sources.
-Full credit for their authorship shall be given when/wherever it is due.
+Notice: The following contains code snippets from various 3rd party sources.
+I've made extensive modifications in order to meet the needs of this project, but I will still cite the source of each snippet to give credit to its author(s).
 */
 
 // CONVERT RGB TO HEX

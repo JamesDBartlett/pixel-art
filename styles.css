@@ -1,19 +1,60 @@
+html {
+  height: 100%;
+}
 body {
-    text-align: center;
-    color: white;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-shadow: 1px 1px 4px #000000, 0 0 8px #000000, 3px 3px 12px #000000;
+  color: white;
+  height: 95%;
+  background: no-repeat fixed center center;
+  background-size: cover;
+  text-shadow: 1px 1px 4px #000000, 0 0 8px #000000, 3px 3px 12px #000000;
+
+}
+
+
+.dock {
+  position: absolute;
+}
+
+.left {
+  float: left;
+  top: 5%;
+}
+
+.right {
+  font-family: Monoton;
+  font-size: calc(4.2vh + 3vmin);
+  right: 10px;
+  height: 90%;
+  transform: rotate(90deg);
+}
+
+.canvas {
+  padding-top: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.storage {
+margin-top: 10px;
+}
+
+#pixelCanvas {
+  right: 50px;
+}
+
+#newbg {
+  margin-bottom: 10px;
 }
 
 h1 {
     font-family: Monoton;
     font-size: 45px;
-    margin: 0.2em;
+
 }
 
 h2 {
     margin: 1em 0 0.25em;
+    width: auto;
 }
 
 h2:first-of-type {
@@ -23,7 +64,7 @@ h2:first-of-type {
 table,
 tr,
 td {
-    border: 1px solid black;
+    border: 0.5px solid black;
     background-color: rgb(255, 255, 255);
 }
 
@@ -33,13 +74,13 @@ table {
 }
 
 tr {
-    height: 10px;
+    height: 5px;
 }
 
 td {
-    width: 10px;
+    width: 2.5px;
 }
 
 input[type=number] {
-    width: 4em;
+    width: 3em;
 }

@@ -4,29 +4,37 @@
     <title>Pixel Art Maker!</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="snippets.css">
 </head>
 <body>
-    <h1>Lab: Pixel Art Maker</h1>
+  <div class="right dock">
+    Lab: Pixel Art Maker
+  </div>
+  <div class="canvas">
     <input type="button" value="New Background" id="newbg">
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="inputHeight" name="height" min="1" value="20">
-        Grid Width:
-        <input type="number" id="inputWidth" name="width" min="1" value="20">
-        <input type="submit">
-    </form>
-
-    <h2>Pick A Color</h2>
-    <input type="color" value="#000000" id="colorPicker">
-
-    <h2>Design Canvas</h2>
     <table id="pixelCanvas"></table>
-
-    <h2>Save / Restore</h2>
-    <input type="button" value="Save" id="save">
-    <input type="button" value="Restore" id="restore">
-
+    <div class="storage">
+      Save / Restore
+      <input type="button" value="Save" id="save">
+      <input type="button" value="Restore" id="restore">
+    </div>
+  </div>
+  <div class="left dock">
+    <h2>Grid Size</h2>
+    <form id="sizePicker">
+        <p>Grid Height:</p>
+        <input type="number" id="inputHeight" name="height" min="1" value="50">
+        <p>Grid Width:</p>
+        <input type="number" id="inputWidth" name="width" min="1" value="50">
+        <p><input type="submit"></p>
+    </form>
+    <h2>Pixel Color</h2>
+    <input type="color" value="#000000" id="colorPicker">
+    <h2>Draw Mode</h2>
+    <!-- <label class="toggle"><input type="checkbox" id="erase">
+      <div class="slider round"></div>
+    </label> -->
+  </div>
     <script src="jquery.min.js"></script>
     <script src="designs.js"></script>
     <script src="nasa.js"></script>
