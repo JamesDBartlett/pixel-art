@@ -1,3 +1,11 @@
+/*
+To Do -- Add a catch-all to prevent any element from overflowing its parent:
+tags, .classes, #ids {
+  max-width=100%;
+  max-height=100%;
+}
+*/
+
 html {
   height: 100%;
 }
@@ -9,7 +17,6 @@ body {
   text-shadow: 1px 1px 4px #000000, 0 0 8px #000000, 3px 3px 12px #000000;
 
 }
-
 
 .dock {
   position: absolute;
